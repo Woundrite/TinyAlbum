@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
-import 'gallery_page.dart';
+import 'package:provider/provider.dart';
+import 'theme_controller.dart';
+import 'home.dart';
 
 void main() {
-  runApp(const Gallery());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeController(),
+      child: const MyApp(),
+    ),
+  );
 }
 
-class Gallery extends StatelessWidget {
-  const Gallery({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final theme = context.watch<ThemeController>();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Gallery App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
-      ),
-      home: const GalleryPage(),
+      title: 'Gallery',
+      theme: theme.data,
+      themeMode: theme.mode,
+      home: const Home(),
     );
   }
 }
