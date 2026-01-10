@@ -14,7 +14,7 @@ class AboutPage extends StatelessWidget {
             Icon(Icons.photo, size: 64),
             SizedBox(height: 16),
             Text(
-              'Gallery App',
+              'Tiny Album',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8),

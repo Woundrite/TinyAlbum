@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Gallery',
+      title: 'Tiny Album',
       theme: theme.data,
       themeMode: theme.mode,
       home: const Home(),
